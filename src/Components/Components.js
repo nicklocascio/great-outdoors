@@ -4,4 +4,4 @@ const Components = () => {
     return <Market />
 };
 
-export default Components
+export default Components;
