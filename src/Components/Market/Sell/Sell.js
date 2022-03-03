@@ -17,6 +17,11 @@ export default function Sell(){
                 Gear <input type="radio" name="item" value="hike" />Hiking Gear
                 </p>
 
+                <label for="itemImg"><b>Please upload an image of your item</b><br /></label>
+                    <input type="file" id="itemimg" name="itemimg" accept="image/*"></input>
+                    <br />
+                    <br />
+
                 <label for="description">
                 <b>Please enter a description for this gear</b><br />
                 </label>
