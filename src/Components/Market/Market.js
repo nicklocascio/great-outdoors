@@ -1,38 +1,27 @@
 import MarketList from "./MarketList";
-import {getById} from "../../Services/getData";
 import React, {useState} from 'react';
 import {useEffect} from 'react';;
 
+import { getAllMarket } from "../../Services/getAllMarket";
+import { getItemById } from "../../Services/getItem";
+import { getReviewById } from "../../Services/getReview";
+import { getAllReviews } from "../../Services/getAllReviews";
 
 //Instead of doing the data read in App, we did it in Market
 //to simulate what we will do in our project
 const Market = () => {
 
-    const [item, setItem] = useState();
+    const [items, setItems] = useState();
 
     useEffect(() => {
         console.log("in use effect...");
-        getById("BpdB6KAK8a").then((item) => {
-            setItem(item);
-            console.log(item.attributes);
+        getAllMarket().then((data) => {
+            setItems(data);
         });
     }, []);
 
-    var primStore = null;
-
-    if(item){
-        primStore = {
-            name: item.get("item"),
-            level: item.get("level"),
-            size: item.get("size"),
-            gender: item.get("gender")
-        }
-    }
-
-    return (
-        <div>
-            <MarketList passObj={primStore}/>
-        </div>
+    return(
+        <div></div>
     );
 };
 
