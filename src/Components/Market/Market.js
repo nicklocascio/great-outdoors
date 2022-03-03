@@ -1,3 +1,4 @@
+
 import MarketList from "./Buy/MarketList";
 import {getById} from "../../Services/getData";
 import Sell from "./Sell/Sell";
@@ -10,26 +11,8 @@ import "./marketStyles.css";
 //to simulate what we will do in our project
 const Market = () => {
 
-    const [item, setItem] = useState();
+    
 
-    useEffect(() => {
-        console.log("in use effect...");
-        getById("BpdB6KAK8a").then((item) => {
-            setItem(item);
-            console.log(item.attributes);
-        });
-    }, []);
-
-    var primStore = null;
-
-    if(item){
-        primStore = {
-            name: item.get("item"),
-            level: item.get("level"),
-            size: item.get("size"),
-            gender: item.get("gender")
-        }
-    }
 
     return (
         <div>
