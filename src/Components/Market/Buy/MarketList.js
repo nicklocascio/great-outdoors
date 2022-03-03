@@ -6,8 +6,7 @@ const MarketList = (passObj) => {
     //     console.log(passObj);
     // }
 
-    //Not sure why you need to pass "passObj.passObj"?
-    //Does it package another layer in every child?
+    //Have to iterate through all Market items here
     return (
         <div>
             <h2>MarketList</h2>
