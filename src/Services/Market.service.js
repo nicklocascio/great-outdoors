@@ -21,13 +21,17 @@ export const getItemById = (id) => {
 };
 
 // create new Market item
-export const createItem = (item, size, gender, level) => {
+export const createItem = (Item, Image, Size, Gender, Level) => {
     const Market = Parse.Object.extend("Market");
     const item = new Market();
-    item.set("item", item);
-    item.set("size", size);
-    item.set("gender", gender);
-    item.set("level", level);
+    if(Image) {
+        const imageFile = new Parse.File(Image.name, Image);
+        item.set("image", imageFile);
+    }
+    item.set("item", Item);
+    item.set("size", Size);
+    item.set("gender", Gender);
+    item.set("level", Level);
     return item.save().then((result) => {
         return result;
     });
