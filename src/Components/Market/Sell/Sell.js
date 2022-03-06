@@ -1,70 +1,61 @@
-export default function Sell(){
+export default function Sell({ itemChange, fileInput, sizeChange, genderChange, levelChange, onClick }){
     return(
     <div>
         <h3>
             Put an item up for sale below:
-            </h3>
-            <div>
+        </h3>
+        <div>
             <form>
-                <p>
                 <b>What are you selling?</b>
                 <br />
-                <input type="radio" name="item" value="ski" />Skis
-                <input type="radio" name="item" value="snowboard" />Snowboard
-                <input type="radio" name="item" value="bike_mountain" />Mountain Bike
-                <input type="radio" name="item" value="bike_road" />Road Bike
-                <input type="radio" name="item" value="rock_climb" />Rock Climbing
-                Gear <input type="radio" name="item" value="hike" />Hiking Gear
-                </p>
+                <div onChange={itemChange}>
+                    <input type="radio" name="item" value="Skis" />Skis
+                    <input type="radio" name="item" value="Snowboard" />Snowboard
+                    <input type="radio" name="item" value="Mountain Bike" />Mountain Bike
+                    <input type="radio" name="item" value="Road Bike" />Road Bike
+                    <input type="radio" name="item" value="Rock Climbing Gear" />Rock Climbing Gear 
+                    <input type="radio" name="item" value="Hiking Gear" />Hiking Gear
+                </div>
 
-                <label for="itemImg"><b>Please upload an image of your item</b><br /></label>
-                    <input type="file" id="itemimg" name="itemimg" accept="image/*"></input>
-                    <br />
-                    <br />
+                <br />
 
-                <label for="description">
-                <b>Please enter a description for this gear</b><br />
-                </label>
-                <textarea name="description" cols="70" rows="10"></textarea>
+                <label htmlFor="image"><b>Please upload an image of your item</b><br /></label>
+                <input type="file" name="image" ref={fileInput}></input>
+                
+                <br />
+                <br />
+
+                <label htmlFor="size"><b>What size is this item? </b></label>
+                <input type="text" name="size" onChange={sizeChange}/>
 
                 <br />
                 <br />
 
-                <label for="size">
-                <b>What size is this item? </b>
-                </label>
-                <input type="text" name="size" />
-
-                <br />
-                <br />
-
-                <label for="gender">
-                <b>What gender is this gear for? </b>
-                </label>
-                <select name="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
+                <label htmlFor="gender"><b>What gender is this gear for? </b></label>
+                <select name="gender" defaultValue={'DEFAULT'} onChange={genderChange}>
+                    <option value="DEFAULT" disabled> -- select a gender -- </option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
                 </select>
 
                 <br />
                 <br />
 
-                <label for="level">
-                <b>What level of participant is this gear for? </b>
-                </label>
-                <select name="level">
-                <option value="beginner">Beginner</option>
-                <option value="intermediate">Intermediate</option>
-                <option value="advanced">Advanced</option>
+                <label htmlFor="level"><b>What level of participant is this gear for? </b></label>
+                <select name="level" defaultValue={'DEFAULT'} onChange={levelChange}>
+                    <option value="DEFAULT" disabled> -- select a level -- </option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
                 </select>
 
                 <br />
                 <br />
 
-                <button type="submit">Sell</button>
+                <button type="submit" onClick={onClick}>Sell</button>
             </form>
-            </div>
-            <hr />
         </div>
+        <hr />
+    </div>
     );
 }

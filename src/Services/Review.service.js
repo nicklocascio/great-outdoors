@@ -21,11 +21,16 @@ export const getReviewById = (id) => {
 }
 
 // create new Review
-export const createReview = (title, body) => {
+export const createReview = (Item, Image, Title, Body) => {
     const Review = Parse.Object.extend("Review");
     const review = new Review();
-    review.set("title", title);
-    review.set("body", body)
+    if(Image) {
+        const imageFile = new Parse.File(Image.name, Image);
+        review.set("image", imageFile);
+    }
+    review.set("category", Item)
+    review.set("title", Title);
+    review.set("body", Body)
     return review.save().then((result) => {
         return result;
     });

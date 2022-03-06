@@ -1,19 +1,15 @@
 import MarketItem from "./MarketItem";
 
-const MarketList = (passObj) => {
-    
-    // if(passObj){
-    //     console.log(passObj);
-    // }
-
+const MarketList = (marketItems) => {
     //Have to iterate through all Market items here
     return (
         <div>
-            <h2>MarketList</h2>
-            <MarketItem passObj={passObj.passObj}/>
+            <h2>Items For Sale</h2>
+            {marketItems.marketItems.map((item) => (
+                <MarketItem key={item["id"]} item={item} />
+            ))}
         </div>
     );
 };
-
 
 export default MarketList;
