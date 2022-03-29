@@ -4,6 +4,8 @@ import Home from "./Home/Home";
 import Reviews from "./Reviews/Reviews";
 import Profile from "./Profile/Profile";
 import ProfileGood from "./Profile/ProfileGood";
+import Register from "./Auth/Register";
+import Login from "./Auth/Login";
 import {
     BrowserRouter as Router,
     Route,
@@ -21,6 +23,8 @@ const Components = () => {
                 <Route path="/reviews" component={Reviews} />
                 <Route path="/profile" component={Profile} />
                 <Route path="/profile/:firstName/:lastName" component={ProfileGood} />
+                <Route path="/register" component={Register} />
+                <Route path="/login" component={Login} />
                 <Redirect to="/" />
             </Switch>
         </Router>

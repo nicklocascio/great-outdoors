@@ -15,6 +15,12 @@ const NavBar = () => (
                     <Link to="/reviews">Reviews</Link>
                 </li>
                 <li>
+                    <Link to="/login">Login</Link>
+                </li>
+                <li>
+                    <Link to="/register">Sign Up</Link>
+                </li>
+                <li>
                     <Link to="/profile">Profile</Link>
                 </li>
             </ul>
