@@ -64,7 +64,7 @@ const Market = () => {
         setAdd(true);
     };
 
-    // coonditionally render the sale section if a user is signed in
+    // conditionally render the sale section if a user is signed in
     return (
         <div>
             <h1 className="page-title">Marketplace</h1>

@@ -8,12 +8,13 @@ const Profile = () => {
     const [path, setPath] = useState("");
 
     useEffect(() => {
-        if(Parse.User.current()) {
+        if(Parse.User.current() && Parse.User.current().authenticated()) {
             setPath(
                 "/user/" + 
-                Parse.User.current().get("firstName") + "/" +
-                Parse.User.current().get("lastName")
+                Parse.User.current().get("fullName").split(" ")[0] + "/" +
+                Parse.User.current().get("fullName").split(" ")[1]
             );
+            console.log(path);
             setFlag(true);
         } else {
             setFlag(false);

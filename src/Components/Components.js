@@ -11,7 +11,7 @@ import {
     Route,
     Switch,
     Redirect
-  } from "react-router-dom";
+} from "react-router-dom";
 
 const Components = () => {
     return(
@@ -22,7 +22,7 @@ const Components = () => {
                 <Route path="/market" component={Market} />
                 <Route path="/reviews" component={Reviews} />
                 <Route path="/profile" component={Profile} />
-                <Route path="/profile/:firstName/:lastName" component={ProfileGood} />
+                <Route path="/user/:firstName/:lastName" component={ProfileGood} />
                 <Route path="/register" component={Register} />
                 <Route path="/login" component={Login} />
                 <Redirect to="/" />
