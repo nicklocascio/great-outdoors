@@ -6,6 +6,7 @@ import {
 } from "../../Services/Market.service"
 
 import React, { useState, useEffect } from 'react';
+import Parse from "parse";
 
 import "./marketStyles.css";
 
@@ -63,11 +64,12 @@ const Market = () => {
         setAdd(true);
     };
 
+    // coonditionally render the sale section if a user is signed in
     return (
         <div>
             <h1 className="page-title">Marketplace</h1>
-            <hr />
-            <Sell 
+            {Parse.User.current() ? (
+                <Sell 
                 itemChange={itemChangeHandler}
                 fileInput={fileInput}
                 sizeChange={sizeChangeHandler}
@@ -75,6 +77,10 @@ const Market = () => {
                 levelChange={levelChangeHandler} 
                 onClick={onClickHandler}
             />
+            ) : (
+                <h3>You must sign up or log in to sell items</h3>
+            )}
+            <hr />
             {marketItems.length > 0 && (
                 <MarketList marketItems={marketItems}/>
             )}
