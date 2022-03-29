@@ -2,6 +2,9 @@ import Market from "./Market/Market";
 import NavBar from "./Navigation/NavBar";
 import Home from "./Home/Home";
 import Reviews from "./Reviews/Reviews";
+import Register from "./Auth/Register";
+import Login from "./Auth/Login";
+
 import {
     BrowserRouter as Router,
     Route,
@@ -17,6 +20,8 @@ const Components = () => {
                 <Route path="/" exact component = {Home} />
                 <Route path="/market" component={Market} />
                 <Route path="/reviews" component={Reviews} />
+                <Route path="/register" component={Register} />
+                <Route path="/login" component={Login} />
                 <Redirect to="/" />
             </Switch>
         </Router>
