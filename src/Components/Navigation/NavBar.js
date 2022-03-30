@@ -1,7 +1,6 @@
 import {Link} from "react-router-dom";
 import Parse from "parse";
 import '../../appStyles.css';
-import SignOut from "../Auth/SignOut";
 
 const NavBar = () => {
     var logInStatus = Parse.User.current();
@@ -14,9 +13,13 @@ const NavBar = () => {
         authDisplayStatus = {display: ''};
         signoutDisplayStatus = {display: 'none'};
     }
+
+    /*
     console.log(logInStatus);
     console.log(authDisplayStatus);
     console.log(signoutDisplayStatus);
+    */
+   
     return(
         <footer>
             <nav>

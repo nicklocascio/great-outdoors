@@ -1,10 +1,7 @@
 import Parse from "parse";
-import {
-    Redirect
-  } from "react-router-dom";
 
 const signOut = () => {
-    console.log("Entering here");
+    
     Parse.User.logOut()
     .then((loggedOut) => {
         return loggedOut;
@@ -13,7 +10,7 @@ const signOut = () => {
         alert(`Log In Error: ${error.message}`);
         return null;
     });
-    return <Redirect to="/" />;
+    return window.location.href = "../Home/Home";
 }
 
 export default signOut;
