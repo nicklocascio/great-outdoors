@@ -6,6 +6,8 @@ import Profile from "./Profile/Profile";
 import ProfileGood from "./Profile/ProfileGood";
 import Register from "./Auth/Register";
 import Login from "./Auth/Login";
+import SignOut from "./Auth/SignOut"
+
 import {
     BrowserRouter as Router,
     Route,
@@ -25,6 +27,7 @@ const Components = () => {
                 <Route path="/user/:firstName/:lastName" component={ProfileGood} />
                 <Route path="/register" component={Register} />
                 <Route path="/login" component={Login} />
+                <Route path="/signout" component={SignOut} />
                 <Redirect to="/" />
             </Switch>
         </Router>
