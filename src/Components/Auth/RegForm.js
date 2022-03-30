@@ -68,7 +68,7 @@ const RegForm = ({ user, onChange, onSubmit, fileInput }) => {
           <br />
           <br />
 
-          <label for="photos">
+          <label htmlFor="photos">
             <b>Please upload a profile photo:</b><br />
           </label>
           <input type="file" name="profilePic" ref={fileInput}/>

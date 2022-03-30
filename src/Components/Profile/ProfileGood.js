@@ -1,11 +1,18 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import Parse from "parse";
 
 const ProfileGood = () => {
     const { firstName, lastName } = useParams();
 
-    const user = Parse.User.current();
+    let user = null;
+    if(Parse.User.current() ) {
+        user = Parse.User.current();
+    } else {
+        return (
+            <Redirect to="/register" />
+        )
+    }
 
     return (
         <div>
