@@ -18,33 +18,35 @@ const NavBar = () => {
     console.log(authDisplayStatus);
     console.log(signoutDisplayStatus);
     return(
-        <nav>
-            <ul className="navigation">
+        <footer>
+            <nav>
+                <ul className="navigation">
 
-                <li>
-                    <Link to="/">Home</Link> 
-                </li>
-                <li>
-                    <Link to="/market">Market</Link>
-                </li>
-                <li>
-                    <Link to="/reviews">Reviews</Link>
-                </li>
-                <li style={authDisplayStatus}>
-                    <Link to="/login">Login</Link>
-                </li>
-                <li style={authDisplayStatus}>
-                    <Link to="/register">Sign Up</Link>
-                </li>
-                <li style={signoutDisplayStatus}>
-                    <Link to="/signout">Sign Out</Link>
-                </li>
-                <li>
-                    <Link to="/profile">Profile</Link>
-                </li>
-            </ul>
-        </nav>
-    </footer>
-);
+                    <li>
+                        <Link to="/">Home</Link> 
+                    </li>
+                    <li>
+                        <Link to="/market">Market</Link>
+                    </li>
+                    <li>
+                        <Link to="/reviews">Reviews</Link>
+                    </li>
+                    <li style={authDisplayStatus}>
+                        <Link to="/login">Login</Link>
+                    </li>
+                    <li style={authDisplayStatus}>
+                        <Link to="/register">Sign Up</Link>
+                    </li>
+                    <li style={signoutDisplayStatus}>
+                        <Link to="/signout">Sign Out</Link>
+                    </li>
+                    <li>
+                        <Link to="/profile">Profile</Link>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+    );
+};
 
 export default NavBar;
