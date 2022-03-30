@@ -2,7 +2,7 @@ import React from "react";
 import "./AuthStyles.css";
 import { Link } from "react-router-dom";
 
-const RegForm = ({ user, onChange, onSubmit, fileInput }) => {
+const RegForm = ({ user, onChange, onSubmit, onCheck, fileInput}) => {
   return (
     <div className="form">
       <form onSubmit={onSubmit} autoComplete="off">
@@ -68,34 +68,22 @@ const RegForm = ({ user, onChange, onSubmit, fileInput }) => {
           <br />
           <br />
 
-          <label for="photos">
+          <label htmlFor="photos">
             <b>Please upload a profile photo:</b><br />
           </label>
-          <input type="file" name="profilePic" ref={fileInput}/>
+          <input type="file" name="profilePic" ref={fileInput} />
           
           <br />
 
           <p>
             <b>I am a...</b>
             <br />
-            <input type="checkbox" name="activities" value="ski" id="ski" />Skier
-            <input
-              type="checkbox"
-              name="activities"
-              value="snowboard"
-              id = "snowboard"
-            />Snowboarder
-            <input
-              type="checkbox"
-              name="activities"
-              value="bike_mountain"
-              id = "bike_mountain"
-            />Mountain Biker
-            <input type="checkbox" name="activities" value="bike_road" id="bike_road"/>Road
-            Biker
-            <input type="checkbox" name="activities" value="rock_climb" id="rock_climb"/>Rock
-            Climber
-            <input type="checkbox" name="activities" value="hike" id="hike" />Hiker
+            <input type="checkbox" name="activities" value="ski" id="ski" onChange={onCheck} />Skier
+            <input type="checkbox" name="activities" value="snowboard" id = "snowboard" onChange={onCheck}/>Snowboarder
+            <input type="checkbox" name="activities" value="bike_mountain" id = "bike_mountain" onChange={onCheck}/>Mountain Biker
+            <input type="checkbox" name="activities" value="bike_road" id="bike_road" onChange={onCheck}/>Road Biker
+            <input type="checkbox" name="activities" value="rock_climb" id="rock_climb" onChange={onCheck}/>Rock Climber
+            <input type="checkbox" name="activities" value="hike" id="hike" onChange={onCheck}/>Hiker
           </p>
 
           <br />

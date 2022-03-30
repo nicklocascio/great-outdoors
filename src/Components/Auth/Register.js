@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { createUser } from "./AuthServices";
 import RegForm from "./RegForm";
+import { Redirect } from "react-router-dom";
 
 const Register = () => {
 
+    //Need to actually compare passwordrepeated with password to guarantee equality
     const [newUser, setNewUser] = useState({
         fullName: "",
         email: "",
@@ -11,31 +13,37 @@ const Register = () => {
         passwordrepeated: ""
     });
 
-    //const[categories, setCategories] = useState([]);
     let fileInput = React.createRef();
 
- 
+    const [ski, setSki] = useState();
+    const [sboard, setSboard] = useState();
+    const [mbike, setMbike] = useState();
+    const [rbike, setRbike] = useState(false);
+    const [rock, setRock] = useState(false);
+    const [hike, setHike] = useState(false);
+
     // flags in the state to watch for add/remove updates
     const [add, setAdd] = useState(false);
 
   useEffect(() => {
     if (newUser && add) {
-      createUser(newUser, fileInput.current.files[0]).then((userCreated) => {
+      createUser(newUser, fileInput.current.files[0], ski, sboard, mbike, rbike, rock, hike).then((userCreated) => {
         if (userCreated) {
           alert(
             `${userCreated.get("fullName")}, you successfully registered!`
           );
+          setAdd(false);
+          window.location.href = "../Home/Home";
         }
         setAdd(false);
+        <Redirect to="/" />;
       });
     }
-  }, [newUser, add, fileInput]);
+  }, [newUser, add, fileInput, ski, sboard, mbike, rbike, rock, hike]);
 
   const onChangeHandler = (e) => {
     e.preventDefault();
-    console.log("changed: ", e.target);
     const { name, value: newValue } = e.target;
-    console.log(newValue);
 
     setNewUser({
       ...newUser,
@@ -44,20 +52,27 @@ const Register = () => {
   };
 
   const onSubmitHandler = (e) => {
-    window.localStorage.clear(); //Meant for testing - can be removed after development
     e.preventDefault();
-    console.log("submitted: ", e.target);
     setAdd(true);
   };
 
-/*
-  const onCheckHandler = (e) => {
-      e.preventDefault();
-      console.log('checked: ', e.target);
-      setCategories(oldArray => [...oldArray, e.target.value]);
-  }
-*/
-
+  const onClickHandler = (e) =>{ 
+      var checked = e.target.checked;
+      var value = e.target.value;
+      if(value === "ski"){
+        setSki(checked);
+      } else if(value === "snowboard"){
+        setSboard(checked);
+      } else if(value === "bike_mountain"){
+        setMbike(checked);
+      } else if(value === "bike_road"){
+        setRbike(checked);
+      } else if(value === "rock_climb"){
+        setRock(checked);
+      } else if(value === "hike"){
+        setHike(checked);
+      }
+  };
 
   return (
     <div>
@@ -65,6 +80,7 @@ const Register = () => {
         user={newUser}
         onChange={onChangeHandler}
         onSubmit={onSubmitHandler}
+        onCheck={onClickHandler}
         fileInput={fileInput}
       />
     </div>
