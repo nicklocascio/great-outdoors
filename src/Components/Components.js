@@ -4,6 +4,7 @@ import Home from "./Home/Home";
 import Reviews from "./Reviews/Reviews";
 import Register from "./Auth/Register";
 import Login from "./Auth/Login";
+import SignOut from "./Auth/SignOut"
 
 import {
     BrowserRouter as Router,
@@ -22,6 +23,7 @@ const Components = () => {
                 <Route path="/reviews" component={Reviews} />
                 <Route path="/register" component={Register} />
                 <Route path="/login" component={Login} />
+                <Route path="/signout" component={SignOut} />
                 <Redirect to="/" />
             </Switch>
         </Router>
