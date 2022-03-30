@@ -1,11 +1,10 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import { createUser } from "./AuthServices";
 import RegForm from "./RegForm";
 import { Redirect } from "react-router-dom";
 
 const Register = () => {
 
-    //Need to actually compare passwordrepeated with password to guarantee equality
     const [newUser, setNewUser] = useState({
         fullName: "",
         email: "",
@@ -15,12 +14,13 @@ const Register = () => {
 
     let fileInput = React.createRef();
 
+    //Flags to keep track of user's category preferences
     const [ski, setSki] = useState();
     const [sboard, setSboard] = useState();
     const [mbike, setMbike] = useState();
-    const [rbike, setRbike] = useState(false);
-    const [rock, setRock] = useState(false);
-    const [hike, setHike] = useState(false);
+    const [rbike, setRbike] = useState();
+    const [rock, setRock] = useState();
+    const [hike, setHike] = useState();
 
     // flags in the state to watch for add/remove updates
     const [add, setAdd] = useState(false);

@@ -1,9 +1,14 @@
 import Parse from "parse";
 
+//Perform some comparison of passwords to ensure user is entering correctly
 export const createUser = (newUser, Image, ski, sboard, mbike, rbike, rock, hike) => {
 
     const user = new Parse.User();
     var categories = [];
+    if(newUser.password !== newUser.passwordrepeated){
+        alert(`Passwords don't match!`);
+        window.location.href = "./register";
+    }
 
     user.set("username", newUser.email);
     user.set("fullName", newUser.fullName);
@@ -13,9 +18,6 @@ export const createUser = (newUser, Image, ski, sboard, mbike, rbike, rock, hike
         const ImageFile = new Parse.File(Image.name, Image);
         user.set("profilePic", ImageFile);
     }
-    console.log({ski});
-    console.log({sboard});
-    console.log({mbike});
 
     if({ski}.ski === true){
         categories.push("ski");
