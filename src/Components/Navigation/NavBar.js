@@ -4,7 +4,6 @@ import '../../appStyles.css';
 import SignOut from "../Auth/SignOut";
 
 const NavBar = () => {
-
     var logInStatus = Parse.User.current();
     var authDisplayStatus = {};
     var signoutDisplayStatus = {};
@@ -40,9 +39,12 @@ const NavBar = () => {
                 <li style={signoutDisplayStatus}>
                     <Link to="/signout">Sign Out</Link>
                 </li>
+                <li>
+                    <Link to="/profile">Profile</Link>
+                </li>
             </ul>
         </nav>
-    );
-};
+    </footer>
+);
 
 export default NavBar;

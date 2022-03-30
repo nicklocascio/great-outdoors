@@ -6,7 +6,8 @@ import {
 } from "../../Services/Review.service"
 
 import React, { useState, useEffect } from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import Parse from "parse";
 
 //Need to change link path once we add profile page
 const Reviews = () => {
@@ -59,13 +60,18 @@ const Reviews = () => {
 
   return(
     <div>
-      <PostReview 
-        itemChange={itemChangeHandler}
-        fileInput={fileInput}
-        titleChange={titleChangeHandler}
-        bodyChange={bodyChangeHandler}
-        onClick={onClickHandler}
-      />
+      {Parse.User.current() ? (
+        <PostReview 
+          itemChange={itemChangeHandler}
+          fileInput={fileInput}
+          titleChange={titleChangeHandler}
+          bodyChange={bodyChangeHandler}
+          onClick={onClickHandler}
+        />
+      ) : (
+        <h3>You must sign up or log in to post a review</h3>
+      )}
+      <hr />
       <h1>Read Reviews</h1>
       <p>
         Based on what you specified when you signed up for an account, reviews for the following types of gear will be displayed:

@@ -39,7 +39,6 @@ export default function PostReview({ itemChange, fileInput, titleChange, bodyCha
                 </form>
                 </div>
                 <br />
-                <hr />
             </div>
     );
 
