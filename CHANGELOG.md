@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+
+## [0.3.0] - 2022-03-30
+
+### Added
+- A new module (Auth) that includes Signup, Login, and Signout capabilities
+- Signup connected with Parse Database to add Users
+- Added ProtectedRoutes
+- Added protected Profile page for authenticated Users
+
+### Changed
+- Protected Posting of Market and Review items unless authenticated
+- Added options to NavBar and restricted visibility of options based on authentication status
+  - Future changes will include the need for automatic refresh of NavBar upon User status changes
+
+### Fixed
+- Removed hardcoding of User category preferences to include actual User info
  
 ## [0.2.0] - 2022-03-16
    
