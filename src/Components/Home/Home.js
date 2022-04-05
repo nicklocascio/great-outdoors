@@ -5,7 +5,7 @@ export default function Home(){
     return(
         <div>
             <div className="container">
-                <img src={mountains} alt="Mountains" style={{"width" : "100%"}} />
+                <img src="../../Images/mountains.jpeg" alt="Mountains" style={{"width" : "100%"}} />
                 <div className="centered"><h1>The Great Outdoors</h1></div>
             </div>
 
