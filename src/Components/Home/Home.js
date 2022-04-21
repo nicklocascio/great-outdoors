@@ -4,10 +4,11 @@ import mountains from "../../Images/mountains.jpeg";
 export default function Home(){
     return(
         <div>
-            <div className="container">
+            {/* <div className="container">
                 <img src="../../Images/mountains.jpeg" alt="Mountains" style={{"width" : "100%"}} />
                 <div className="centered"><h1>The Great Outdoors</h1></div>
-            </div>
+            </div> */}
+            <h1>The Great Outdoors</h1>
 
             <div>
                 <p className="intro">
