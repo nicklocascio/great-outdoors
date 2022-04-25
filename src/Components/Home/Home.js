@@ -6,6 +6,12 @@ export default function Home(){
         <div>
            <h1 className="page-title">The Great Outdoors</h1>
             <br />
+
+            <div className="container">
+                <img src="../../Images/mountains.jpeg" alt="Mountains" style={{"width" : "100%"}} />
+                
+            </div>
+
             <div>
                 <p className="intro">
                     There is an overwhelming amount of outdoor gear in this world, and some

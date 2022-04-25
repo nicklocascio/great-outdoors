@@ -18,7 +18,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   - Future changes will include the need for automatic refresh of NavBar upon User status changes
 
 ### Fixed
-- Removed hardcoding of User category preferences to include actual User info
  
 ## [0.2.0] - 2022-03-16
    
