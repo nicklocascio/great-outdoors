@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.4.0] - 2022-03-30
+
+### Added
+- Added EditProfile files to allow users to alter profile information
+  - This works but the method of refreshing the changes has an unfixed bug that occasionally causes it to fail
+- Added Message and LiveChat capabilities
+
+### Changed
+- Removed some hardcoded text that described unimplemented features
+- Removed some unnecessary console logs and alerts (e.g. Login success alert)
+
+### Fixed
+- Changed Protected Route buttons to proper Links
+
 ## [0.3.0] - 2022-03-30
 
 ### Added
