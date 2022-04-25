@@ -21,7 +21,7 @@ const ProfileGood = () => {
             </h1>
             
             <img 
-                src={user.get("profilePic").url()} 
+                // src={user.get("profilePic").url()} 
                 style={{"height": "50%", "width": "50%"}}
             />
 
