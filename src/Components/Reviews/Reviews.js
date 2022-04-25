@@ -32,6 +32,7 @@ const Reviews = () => {
   useEffect(() => {
     if(add && item && title && body) {
       createReview(item, fileInput.current.files[0], title, body).then((newReview) => {
+        alert(`Posted!`)
         setAdd(false);
         setReviews([...reviews, newReview]);
       })
@@ -69,21 +70,15 @@ const Reviews = () => {
           onClick={onClickHandler}
         />
       ) : (
-        <h3>You must sign up or log in to post a review</h3>
+        <div>
+          <br />
+          <h3>You must sign up or log in to post a review</h3>
+          <br />
+        </div>
       )}
       <hr />
+      <br />
       <h1>Read Reviews</h1>
-      <p>
-        Based on what you specified when you signed up for an account, reviews for the following types of gear will be displayed:
-      </p>
-      <ul>
-        <li>Snowboarding</li>
-        <li>Mountain Biking</li>
-        <li>Rock Climbing</li>
-      </ul>
-      <p>
-        Does something look wrong here? Make a change on your <Link to="/">profile</Link> page.
-      </p>
       {reviews.length > 0 && (
         <ReviewList reviews={reviews}/>
       )}

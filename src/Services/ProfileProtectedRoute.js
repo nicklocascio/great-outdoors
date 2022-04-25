@@ -8,11 +8,14 @@ const ProfileProtectedRoute = ({ component: Component, flag, ...rest }) => {
                 <Redirect to={rest.path} />
             ) : (
                 <div>
+                    <br />
+                    <br />
                     <p>Unauthorized! You must log in or sign up to view this page</p>
-                    <button><Link to="/register">Sign Up</Link></button>
+                    <br />
+                    <Link to="/register"><button>Sign Up</button></Link>
                     <br />
                     <br />
-                    <button><Link to="/login">Login</Link></button>
+                    <Link to="/login"><button>Login</button></Link>
                 </div>
             )}
         </div>

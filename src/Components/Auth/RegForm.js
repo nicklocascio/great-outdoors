@@ -7,9 +7,13 @@ const RegForm = ({ user, onChange, onSubmit, onCheck, fileInput}) => {
     <div className="form">
       <form onSubmit={onSubmit} autoComplete="off">
         <div>
+        <br />
         <h1>Register</h1>
+        <br />
           <p>Please fill out this form to create an account.</p>
+          <br />
           <hr />
+          <br />
           <label><b>Name</b></label>
           <br />
           <input
@@ -74,17 +78,19 @@ const RegForm = ({ user, onChange, onSubmit, onCheck, fileInput}) => {
           <input type="file" name="profilePic" ref={fileInput} />
           
           <br />
+          <br />
 
           <p>
             <b>I am a...</b>
-            <br />
-            <input type="checkbox" name="activities" value="ski" id="ski" onChange={onCheck} />Skier
-            <input type="checkbox" name="activities" value="snowboard" id = "snowboard" onChange={onCheck}/>Snowboarder
-            <input type="checkbox" name="activities" value="bike_mountain" id = "bike_mountain" onChange={onCheck}/>Mountain Biker
-            <input type="checkbox" name="activities" value="bike_road" id="bike_road" onChange={onCheck}/>Road Biker
-            <input type="checkbox" name="activities" value="rock_climb" id="rock_climb" onChange={onCheck}/>Rock Climber
-            <input type="checkbox" name="activities" value="hike" id="hike" onChange={onCheck}/>Hiker
           </p>
+          <div className="checkboxes">
+            <input type="checkbox" name="activities" value="ski" id="ski" onChange={onCheck} /><label>Skier</label>
+            <input type="checkbox" name="activities" value="snowboard" id = "snowboard" onChange={onCheck}/><label>Snowboarder</label>
+            <input type="checkbox" name="activities" value="bike_mountain" id = "bike_mountain" onChange={onCheck}/><label>Mountain Biker</label>
+            <input type="checkbox" name="activities" value="bike_road" id="bike_road" onChange={onCheck}/><label>Road Biker</label>
+            <input type="checkbox" name="activities" value="rock_climb" id="rock_climb" onChange={onCheck}/><label>Rock Climber</label>
+            <input type="checkbox" name="activities" value="hike" id="hike" onChange={onCheck}/><label>Hiker</label>
+          </div>
 
           <br />
 

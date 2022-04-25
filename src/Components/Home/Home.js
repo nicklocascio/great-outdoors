@@ -4,11 +4,8 @@ import mountains from "../../Images/mountains.jpeg";
 export default function Home(){
     return(
         <div>
-            <div className="container">
-                <img src={mountains} alt="Mountains" style={{"width" : "100%"}} />
-                <div className="centered"><h1>The Great Outdoors</h1></div>
-            </div>
-
+           <h1 className="page-title">The Great Outdoors</h1>
+            <br />
             <div>
                 <p className="intro">
                     There is an overwhelming amount of outdoor gear in this world, and some

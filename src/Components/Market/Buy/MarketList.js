@@ -4,6 +4,7 @@ const MarketList = (marketItems) => {
     //Have to iterate through all Market items here
     return (
         <div>
+            <br />
             <h2>Items For Sale</h2>
             {marketItems.marketItems.map((item) => (
                 <MarketItem key={item["id"]} item={item} />

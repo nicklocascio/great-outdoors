@@ -5,7 +5,7 @@ import Parse from "parse";
 import * as Env from "./environments";
 
 Parse.initialize(Env.APPLICATION_ID, Env.JAVASCRIPT_KEY);
-Parse.serverURL = Env.SERVER_URL;
+Parse.serverURL = Env.LIVEQUERY;
 
 function App() {
   return <Components style ={{"margin": "10px"}}/>;

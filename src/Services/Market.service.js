@@ -21,17 +21,23 @@ export const getItemById = (id) => {
 };
 
 // create new Market item
-export const createItem = (Item, Image, Size, Gender, Level) => {
+export const createItem = (Item, Image, Model, Size, Gender, Level) => {
+
+    const user = Parse.User.current();
+
     const Market = Parse.Object.extend("Market");
     const item = new Market();
     if(Image) {
         const imageFile = new Parse.File(Image.name, Image);
         item.set("image", imageFile);
     }
+    console.log(Model);
     item.set("item", Item);
+    item.set("model", Model);
     item.set("size", Size);
     item.set("gender", Gender);
     item.set("level", Level);
+    item.set("user", user);
     return item.save().then((result) => {
         return result;
     });
@@ -45,3 +51,14 @@ export const removeItem = (id) => {
       return result.destroy();
     });
   };
+
+export const getItemEmail = (id) => {
+    return Parse.Cloud.run("getEmail", {"objectId":id})
+        .then((updateSaved) => {
+            return updateSaved;
+        })
+        .catch((error) => {
+            alert( `getItemEmail Error: ${error.message}`);
+        });
+
+}

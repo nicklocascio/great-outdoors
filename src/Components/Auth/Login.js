@@ -15,7 +15,6 @@ const Login = () => {
         if (logInUser && pass) {
           userLogIn(logInUser).then((loggedIn) => {
             if (loggedIn) {
-              alert(`You successfully logged in!`);
               setPass(false);
               window.location.href = "../Home/Home";
             }
@@ -27,9 +26,7 @@ const Login = () => {
     
   const onChangeHandler = (e) => {
     e.preventDefault();
-    console.log("changed: ", e.target);
     const { name, value: newValue } = e.target;
-    console.log(newValue);
 
     setLogInUser({
       ...logInUser,
@@ -38,10 +35,8 @@ const Login = () => {
   };
 
     const onSubmitHandler = (e) => {
-        console.log("submitted: ", e.target);
         e.preventDefault();
         setPass(true);
-        console.log("CHANGED PASS: ", pass);
     };
 
     return(
