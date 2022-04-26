@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added EditProfile files to allow users to alter profile information
   - This works but the method of refreshing the changes has an unfixed bug that occasionally causes it to fail
 - Added Message and LiveChat capabilities
+- Started a Parse Server on an Amazon EC2 instance connected to a MongoDB Atlas Cluster
+- Hosted the application on AWS Amplify with different domains for different branches
 
 ### Changed
 - Removed some hardcoded text that described unimplemented features
