@@ -8,7 +8,6 @@ export default function Home(){
                 <img src={mountains} alt="Mountains" style={{"width" : "100%"}} />
                 <div className="centered"><h1>The Great Outdoors</h1></div>
             </div>
-            {/* <h1>The Great Outdoors</h1> */}
 
             <div>
                 <p className="intro">

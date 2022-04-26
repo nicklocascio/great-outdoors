@@ -1,20 +1,22 @@
-export default function Sell({ itemChange, fileInput, sizeChange, genderChange, levelChange, onClick }){
+export default function Sell({ itemChange, fileInput, modelChange, sizeChange, genderChange, levelChange, onClick }){
     return(
     <div>
+        <br />
         <h3>
             Put an item up for sale below:
         </h3>
+        <br />
         <div>
             <form>
                 <b>What are you selling?</b>
                 <br />
-                <div onChange={itemChange}>
-                    <input type="radio" name="item" value="Skis" />Skis
-                    <input type="radio" name="item" value="Snowboard" />Snowboard
-                    <input type="radio" name="item" value="Mountain Bike" />Mountain Bike
-                    <input type="radio" name="item" value="Road Bike" />Road Bike
-                    <input type="radio" name="item" value="Rock Climbing Gear" />Rock Climbing Gear 
-                    <input type="radio" name="item" value="Hiking Gear" />Hiking Gear
+                <div onChange={itemChange} className="checkboxes">
+                    <input type="radio" name="item" value="Skis" /><label>Skis</label>
+                    <input type="radio" name="item" value="Snowboard" /><label>Snowboard</label>
+                    <input type="radio" name="item" value="Mountain Bike" /><label>Mountain Bike</label>
+                    <input type="radio" name="item" value="Road Bike" /><label>Road Bike</label>
+                    <input type="radio" name="item" value="Rock Climbing Gear" /><label>Rock Climbing Gear</label>
+                    <input type="radio" name="item" value="Hiking Gear" /><label>Hiking Gear</label>
                 </div>
 
                 <br />
@@ -25,8 +27,14 @@ export default function Sell({ itemChange, fileInput, sizeChange, genderChange, 
                 <br />
                 <br />
 
+                <label htmlFor="model"><b>What's the model name? </b></label>
+                <input type="text" name="model" onChange={modelChange} />
+
+                <br />
+                <br />
+
                 <label htmlFor="size"><b>What size is this item? </b></label>
-                <input type="text" name="size" onChange={sizeChange}/>
+                <input type="text" name="size" onChange={sizeChange} />
 
                 <br />
                 <br />
@@ -53,6 +61,8 @@ export default function Sell({ itemChange, fileInput, sizeChange, genderChange, 
                 <br />
 
                 <button type="submit" onClick={onClick}>Sell</button>
+                <br />
+                <br />
             </form>
         </div>
         <hr />

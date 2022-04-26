@@ -3,10 +3,9 @@ import Parse from "parse";
 import '../../appStyles.css';
 
 const NavBar = () => {
-    var logInStatus = Parse.User.current();
     var authDisplayStatus = {};
     var signoutDisplayStatus = {};
-    if(logInStatus){
+    if(Parse.User.current() && Parse.User.current().authenticated()){
         authDisplayStatus = {display: 'none'};
         signoutDisplayStatus = {display: ''};
     } else{
@@ -41,10 +40,13 @@ const NavBar = () => {
                         <Link to="/register">Sign Up</Link>
                     </li>
                     <li style={signoutDisplayStatus}>
-                        <Link to="/signout">Sign Out</Link>
+                        <Link to="/messages">Messages</Link>
                     </li>
-                    <li>
+                    <li style={signoutDisplayStatus}>
                         <Link to="/profile">Profile</Link>
+                    </li>
+                    <li style={signoutDisplayStatus}>
+                        <Link to="/signout">Sign Out</Link>
                     </li>
                 </ul>
             </nav>

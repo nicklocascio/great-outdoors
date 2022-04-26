@@ -1,8 +1,21 @@
 import "../marketStyles.css";
+import {getItemEmail} from "../../../Services/Market.service";
+import {useEffect, useState} from "react";
 
 //Need to change image source here
 const MarketItem = (item) => {
   item = item.item;
+  const[email, setEmail] = useState();
+
+  useEffect(() => {
+    if(item) {
+        getItemEmail(item.get("user").id).then((emailStr) => {
+            setEmail(emailStr);
+        })
+    } else {
+      console.log("Failure")
+    }
+  }, [item]);
   //If item has been loaded, return text for it
   //Add distance attribute to Market item in Back4App?
   //Add image to back4App?
@@ -18,14 +31,18 @@ const MarketItem = (item) => {
           />
         </div>
         <div className="listing-card-back">
+          <br />
           <h3>
             {item.get("item")}
           </h3>
           <ul>
+            <li>Model: {item.get("model")}</li>
             <li>Size: {item.get("size")}</li>
             <li>Gender: {item.get("gender")}</li>
             <li>Level: {item.get("level")}</li>
-            <li>Distance from you: 10 mi</li>
+            <br />
+            <li>Posted By: {email}</li>
+            <li style={{'display':'none'}}>Id: {item.get("user").id}</li>
           </ul>
         </div>
       </div>

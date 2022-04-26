@@ -1,18 +1,21 @@
 export default function PostReview({ itemChange, fileInput, titleChange, bodyChange, onClick }){
     return(
         <div>
+            <br />
             <h2>Leave a Review</h2>
+            <br />
                 <div>
                 <form>
                     <b>What category matches the item you're reviewing?</b>
                     <br />
-                    <div onChange={itemChange}>
-                        <input type="radio" name="item" value="Skis" />Skis
-                        <input type="radio" name="item" value="Snowboard" />Snowboard
-                        <input type="radio" name="item" value="Mountain Bike" />Mountain Bike
-                        <input type="radio" name="item" value="Road Bike" />Road Bike
-                        <input type="radio" name="item" value="Rock Climbing Gear" />Rock Climbing Gear 
-                        <input type="radio" name="item" value="Hiking Gear" />Hiking Gear
+                    
+                    <div className="checkboxes" onChange={itemChange}>
+                        <input type="radio" name="item" value="Skis" /><label>Skis</label>
+                        <input type="radio" name="item" value="Snowboard" /><label>Snowboard</label>
+                        <input type="radio" name="item" value="Mountain Bike" /><label>Mountain Bike</label>
+                        <input type="radio" name="item" value="Road Bike" /><label>Road Bike</label>
+                        <input type="radio" name="item" value="Rock Climbing Gear" /><label>Rock Climbing Gear</label>
+                        <input type="radio" name="item" value="Hiking Gear" /><label>Hiking Gear</label>
                     </div>
 
                     <br />

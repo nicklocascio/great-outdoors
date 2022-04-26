@@ -3,6 +3,7 @@ const ReviewItem = (review) => {
   //Insert reviews here
   return(
     <div>
+      <br />
       <h3>
         {review.get("title")}
       </h3>
@@ -13,6 +14,7 @@ const ReviewItem = (review) => {
       <p>
         {review.get("body")}
       </p>
+      <br />
     </div>
   );
 }

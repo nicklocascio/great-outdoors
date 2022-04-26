@@ -7,8 +7,11 @@ const LoginForm = ({ user, onChange, onSubmit }) => {
         <div className="form">
             <form onSubmit={onSubmit} autoComplete="off">
                 <div>
+                <br />
                 <h1>Login</h1>
+                <br />
                 <p>Please sign in below.</p>
+                <br />
                 <hr />
                 <br />
                 <label htmlFor="email"><b>Email</b></label>
@@ -49,6 +52,8 @@ const LoginForm = ({ user, onChange, onSubmit }) => {
                 <p>
                     Don't have an account? <Link to="/register">Create One</Link>
                 </p>
+                <br />
+                <p><Link to="/passwordreset">Forgot your password?</Link></p>
                 </div>
             </form>
         </div>

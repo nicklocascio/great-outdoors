@@ -10,7 +10,8 @@ const signOut = () => {
         alert(`Log In Error: ${error.message}`);
         return null;
     });
-    return window.location.href = "../Home/Home";
+    window.location.href = "../Home/Home";
+    return null;
 }
 
 export default signOut;
