@@ -4,8 +4,10 @@ import mountains from "../../Images/mountains.jpeg";
 export default function Home(){
     return(
         <div>
-           <h1 className="page-title">The Great Outdoors</h1>
-            <br />
+            <div className="container">
+                <img src={mountains} alt="Mountains" style={{"width" : "100%"}} />
+                <div className="centered"><h1>The Great Outdoors</h1></div>
+            </div>
 
             <div>
                 <p className="intro">

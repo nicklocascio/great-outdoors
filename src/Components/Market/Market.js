@@ -73,7 +73,7 @@ const Market = () => {
     // conditionally render the sale section if a user is signed in
     return (
         <div>
-            <h1 className="page-title">Marketplace</h1>
+            <h1>Marketplace</h1>
             {Parse.User.current() ? (
                 <Sell 
                 itemChange={itemChangeHandler}
